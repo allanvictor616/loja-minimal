@@ -1,0 +1,988 @@
+/* Reset básico */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1b0431, #705880);
+  min-width: 768px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.grid-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.btn {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2a1a3a;
+  color: white;
+}
+
+/* === Containers === */
+.content,
+.form-container,
+.pagamento-container {
+  background-color: #fff;
+  color: #333;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(75, 0, 130, 0.3);
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content h2,
+.form-container h2,
+.pagamento-container h2 {
+  color: var(--roxo-escuro);
+  margin-bottom: 15px;
+}
+
+.content p,
+.pagamento-container p {
+  margin-bottom: 20px;
+}
+
+/* BOTAO DE X NO CONTAINER DAS 3 DIV */
+
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: none;
+  border: none;
+  padding: 4px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fechar-popup i {
+  font-size: 20px;
+  color: #987fab;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.fechar-popup:hover i {
+  color: white !important;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVIDADE HEADER */
+.cabecalho {
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.linha-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-loja {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-loja {
+  flex-shrink: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff69b4;
+  margin-right: auto;
+
+}
+
+/* RESPONSIVIDADE INDEX */
+.conteudo-principal {
+  min-width: 768px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* === Footer Estilizado === */
+
+footer {
+  background: linear-gradient(to right, #1b0431, #705880);
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+/* Colunas centralizadas */
+footer .coluna {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer .coluna p,
+footer .coluna a {
+  margin: 8px 0;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .coluna a:hover {
+  color: rgb(152, 127, 171);
+  /* Lavanda roxa suave */
+}
+
+/* Botão de WhatsApp */
+footer .whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+footer .whatsapp-btn:hover {
+  background-color: #128C7E;
+}
+
+/* Botão com ícone */
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  background-color: #128C7E;
+  color: white;
+}
+
+.whatsapp-link i {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  footer .coluna {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Fundo escuro com opacidade */
+.fundo-roxo-escuro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(75, 0, 130, 0.3);
+  z-index: 0;
+}
+
+/* Cabeçalho com LED rosa */
+.cabecalho {
+  background: linear-gradient(to right, #1b0431, #42344b);
+  border: 1px solid rgba(255, 105, 180, 0.4);
+  box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.6);
+  backdrop-filter: blur(4px);
+  display: block;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  flex: none;
+  align-self: stretch;
+}
+
+/* Linha interna do cabeçalho */
+.linha-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+/* Nome da loja */
+.logo-loja {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+/* Menu de categorias */
+.menu-loja .lista-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 10px 0;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.menu-loja .lista-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.menu-loja .lista-menu li a:hover {
+  color: #ff69b4;
+}
+
+/* Painel interativo */
+.painel-login {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 320px;
+  background-color: rgba(75, 0, 130, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  padding: 20px;
+  display: none;
+  z-index: 200;
+}
+
+.painel-login.ativo {
+  display: block;
+}
+
+.painel-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.painel-conteudo h2 {
+  margin-bottom: 5px;
+}
+
+.painel-conteudo p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.painel-conteudo button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.painel-conteudo button:hover {
+  background-color: #2a1a3a;
+}
+
+.painel-conteudo input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Botões no header */
+.botao-login button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.botao-ajuda a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Ajuda */
+.ajuda-loja a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ajuda-loja i {
+  font-size: 20px;
+  color: #ff69b4;
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  min-height: 400px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+/* Div do meio (a sobreposição) */
+.middle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #987fab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+  z-index: 10;
+  color: #fff;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+.middle h2,
+.middle p {
+  transition: all 0.4s ease;
+}
+
+/* Checkbox invisível */
+#toggle {
+  display: none;
+}
+
+/* Transições ativadas */
+#toggle:checked~.container .middle {
+  left: 0;
+  background-color: #543062;
+}
+
+#toggle:checked~.container .left {
+  opacity: 0.7;
+}
+
+#toggle:checked~.container .right {
+  opacity: 1;
+}
+
+/* Botões */
+button,
+label {
+  background: #fff;
+  color: #543062;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+label:hover {
+  background: #2a1a3a;
+  color: #fff;
+}
+
+/* Botão de cadastro */
+.botao-cadastro button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Pop-up de cadastro */
+.popup-cadastro.ativo {
+  display: flex;
+}
+
+/* Efeito de desfoque no fundo */
+
+body.blur-ativo::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0.075px);
+  background-color: rgba(42, 26, 58, 0.6);
+  z-index: 199;
+}
+
+.conteudo-cadastro {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.secao h2 {
+  color: #543062;
+}
+
+.secao input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.secao button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.fechar {
+  margin-top: 10px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: backgroud 0.3s ease;
+}
+
+
+/* Menu suspenso do usuário */
+.menu-usuario {
+  position: relative;
+}
+
+.menu-usuario button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.lista-usuario {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #543062;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  display: none;
+  z-index: 150;
+  min-width: 120px;
+}
+
+.lista-usuario li {
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.lista-usuario li:hover {
+  background-color: #ff69b4;
+}
+
+/* Pop-up com layout original */
+.popup-cadastro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: auto;
+  min-height: 400px;
+  background-color: #EADAF7;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+
+.popup-cadastro.ativo {
+  display: flex;
+}
+
+.popup-cadastro .container {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  margin-top: 0;
+}
+
+
+
+.popup-cadastro .left {
+  background-color: #EADAF7;
+  flex: 1;
+  margin-left: -11px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1rem;
+  color: #2a1a3a;
+  transition: all 0.6s ease;
+}
+
+.popup-cadastro .right {
+  background-color: #EADAF7;
+  flex: 1;
+  margin-right: -11px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.6s ease;
+}
+
+.popup-cadastro .middle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #987fab;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.6s ease;
+  z-index: 10;
+}
+
+.popup-cadastro #toggle {
+  display: none;
+}
+
+.popup-cadastro #toggle:checked~.container .middle {
+  left: 0;
+  background-color: #543062;
+}
+
+.popup-cadastro #toggle:checked~.container .left {
+  opacity: 0.7;
+}
+
+.popup-cadastro #toggle:checked~.container .right {
+  opacity: 1;
+}
+
+/* Botões reais dentro do pop-up */
+.popup-cadastro button {
+  background: #fff;
+  color: #543062;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.popup-cadastro button:hover {
+  background: #2a1a3a;
+  color: #fff;
+}
+
+/* Labels informativos (não clicáveis) */
+.popup-cadastro label {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  cursor: default;
+  transition: none;
+  margin-top: 0;
+}
+
+/* Estilo geral para formulários */
+.form-login,
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+.form-login h2,
+.form-cadastro h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #2a1a3a;
+}
+
+/* Labels discretos */
+.form-login label,
+.form-cadastro label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  cursor: default;
+  transition: none;
+  display: block;
+}
+
+/* Cores específicas */
+.form-login label {
+  color: #543062;
+}
+
+.form-cadastro label {
+  color: #543062;
+}
+
+/* Inputs */
+.form-login input,
+.form-cadastro input {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+  margin-bottom: 6px;
+}
+
+.form-login input:focus,
+.form-cadastro input:focus {
+  border-color: #ff69b4;
+  outline: none;
+}
+
+/* Botões */
+.form-login button,
+.form-cadastro button {
+  margin-top: 10px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.form-login button:hover,
+.form-cadastro button:hover {
+  background-color: #2a1a3a;
+}
+
+/* Label estilizado como botão para o meio "Cadastrar" */
+.botao-cadastrar-label {
+  background: #fff;
+  color: #543062;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.botao-cadastrar-label:hover {
+  background: #2a1a3a;
+  color: #fff;
+}
+
+/* RESPONSIVIDADE */
+
+/* RESPONSIVIDADE HEADER */
+@media (max-width: 992px) {
+  .linha-cabecalho {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-loja .lista-menu {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .menu-loja .lista-menu li {
+    white-space: nowrap;
+  }
+}
+
+/* RESPONSIVIDADE INDEX */
+@media (max-width: 992px) {
+  .conteudo-principal {
+    padding: 15px;
+  }
+}
+
+/* RESPONSIVIDADE FOOTER */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .coluna {
+    width: 100%;
+  }
+}
+
+
+/* RESPONSIVIDADE POP-UP */
+@media (max-width: 768px) {
+  .popup-cadastro .container {
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .popup-cadastro {
+    width: 90%;
+    height: auto;
+  }
+
+  .popup-cadastro .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .popup-cadastro .left,
+  .popup-cadastro .right,
+  .popup-cadastro .middle {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .popup-cadastro .middle {
+    position: relative;
+    left: 0;
+  }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+  .popup-cadastro .container {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    height: 300px;
+    font-size: 1.2rem;
+    padding: 20px;
+    transition: opacity 0.6s ease;
+  }
+
+  .middle {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0;
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .left {
+    display: flex;
+  }
+
+  .right {
+    display: none;
+  }
+
+  #toggle:checked~.container .left {
+    display: none;
+  }
+
+  #toggle:checked~.container .right {
+    display: flex;
+  }
+
+  #toggle:checked~.container .middle {
+    background-color: #543062;
+  }
+}
+
+/* RESPONSIVIDADE MOBILE LOGIN */
+
+.popup-cadastro .mobile-toggle {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.popup-cadastro .mobile-toggle label {
+  color: #ff69b4;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .popup-cadastro .mobile-toggle {
+    display: block;
+  }
+
+  .popup-cadastro .mobile-toggle.cadastro {
+    display: none;
+  }
+
+  #toggle:checked~.container .mobile-toggle {
+    display: none;
+  }
+
+  #toggle:checked~.container .mobile-toggle.cadastro {
+    display: block;
+  }
+
+  .popup-cadastro .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .popup-cadastro .left,
+  .popup-cadastro .middle,
+  .popup-cadastro .right {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .popup-cadastro .middle {
+    position: relative;
+    left: 0;
+    z-index: 2;
+  }
+
+  .popup-cadastro .right {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #EADAF7;
+  }
+
+  #toggle:checked~.container .right {
+    top: 0;
+  }
+
+  #toggle:checked~.container .left,
+  #toggle:checked~.container .middle {
+    display: none;
+  }
+}
